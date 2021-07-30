@@ -34,7 +34,7 @@ import { SearchField } from '../../components/SearchField';
 export default function CharacterList(){
 
   const [characters, setCharacters]= useState<Character[]>([]);
-  const [charactersList, setCharactersList]= useState([]);
+  const [charactersCount, setCharactersCount]= useState(0);
   const [loading, setLoading] = useState(true);
 
   const [page, setPage]= useState(1);
@@ -42,10 +42,6 @@ export default function CharacterList(){
   const [loadedAll, setLoadedAll] = useState(false)
 
   
-  const navigation = useNavigation()
-  function handleCharacterListAcess(){
-    navigation.navigate("CharacterOverView")
-}
 
   function handleFetchMore(){
     setLoadingMore(true);
@@ -56,18 +52,16 @@ export default function CharacterList(){
   async function fetchCharacters(){
     
     const {data} = await api.get(`/character/?page=${page}`)
-     
       if(!data){
           return setLoading(true);
       }
       if(page>1){
           setCharacters(oldValue => [...oldValue, ...data.results]);
-          setCharactersList(oldValue => [...oldValue, ...data.results]);
       }else{
           
           setCharacters(data.results);
 
-          setCharactersList(data.results);
+          setCharactersCount(data.info.count);
       }
       setLoading(false);
       setLoadingMore(false);
@@ -86,7 +80,7 @@ export default function CharacterList(){
   <Container>
     <Header>
       <Title>Listagem</Title>
-      <Quantidade>Muitos Personagens</Quantidade>
+      <Quantidade>{charactersCount} Personagens</Quantidade>
     </Header>
     <View>
       <SearchField/>

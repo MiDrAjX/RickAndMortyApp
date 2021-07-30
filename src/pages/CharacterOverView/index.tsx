@@ -1,7 +1,15 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-import { Container, CardButtonIcon, CharacterImage, CharacterTitle, ViewRow } from './styles';
+import { 
+  Container, 
+  CharacterButtonIcon, 
+  CharacterImage, 
+  CharacterTitle, 
+  ViewRow, 
+  CharacterSubTitle, 
+  CharacterText,
+} from './styles';
 
 export default function CharacterOverView(){
 
@@ -12,8 +20,18 @@ export default function CharacterOverView(){
      <CharacterTitle numberOfLines={1}>
         Morty
       </CharacterTitle>
-      <CardButtonIcon name="heart"/>
+      <CharacterButtonIcon name="heart"/>
      </ViewRow>
+     <ViewRow>
+     <View>
+        <CharacterSubTitle>Species:</CharacterSubTitle>
+        <CharacterText>Human</CharacterText>
+      </View>
+      <View>
+        <CharacterSubTitle>Gender:</CharacterSubTitle>
+        <CharacterText>Male</CharacterText>
+      </View>
+      </ViewRow>
    </Container>
   )
   }

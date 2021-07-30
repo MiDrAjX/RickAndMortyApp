@@ -20,13 +20,18 @@ interface CharacterProps {
 }
 
 export default function Card({item}:CharacterProps){
+
   const navigation = useNavigation()
-  function handleCharacterListAcess(){
-    navigation.navigate("CharacterOverView")
-}
+
+  const handleCharacterListAcess = useCallback(
+    (name: string) => {
+      navigation.navigate('CharacterOverView', { name });
+    },
+    [navigation],
+  );
 
 return (
-  <CardContainer onPress={handleCharacterListAcess}>
+  <CardContainer onPress={()=>handleCharacterListAcess(item.id)}>
   <CardImage source={{ uri: item.image }} resizeMode="cover"/>
     <CardInformation>
     

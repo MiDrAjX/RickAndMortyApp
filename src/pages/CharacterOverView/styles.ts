@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/Feather';
 
 export const CharacterImage = styled.Image`
+margin-bottom: 31px;
 width: 411px;
 height: 437px;
 left: 0px;
@@ -9,9 +10,8 @@ top: 0px;
 `;
 
 export const CharacterTitle = styled.Text`
-top: 31px;
-left: 20px;
-
+margin-bottom: 30px;
+left: -55px;
 font-family: Poppins;
 font-style: normal;
 font-weight: 600;
@@ -21,35 +21,45 @@ line-height: 36px;
 color: #333333;
 `;
 
-export const CardButtonIcon = styled(Icon)`
-top: 34px;
-right: 20px;
+export const CharacterButtonIcon = styled(Icon)`
+left: 55px;
+padding-top: 3px;
 color: #1E2047;
-font-size: 20px;
+font-size: 30px;
+`;
+export const CharacterSubTitle = styled.Text`
+left: -50px;
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+color: #333333;
+`;
+
+export const CharacterText = styled.Text`
+left: -50px;
+font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+
+color: #333333;
 `;
 
 export const ViewRow= styled.View`
 flex-direction:row;
-justify-content:space-between
+justify-content:space-around;
 `
 
 export const Container = styled.View`
+  
   width: 100%;
   height: 100%;
   position: relative;
-  background-color: #C4C4C4;
+  background-color: #F0F0F5;
   ` 
-
-export const Header = styled.View`
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 125px;
-  padding: 0 20px;
-  background: #1E2047;
-  `;
-
   export const Title = styled.Text`
  
   color: #FFFFFF;
@@ -59,15 +69,5 @@ export const Header = styled.View`
   font-size: 20px;
   line-height: 32px;
   `
-
-  export const Quantidade = styled.Text`
-  color: #C1C1C1;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 32px;
-  `;
-
 
 
