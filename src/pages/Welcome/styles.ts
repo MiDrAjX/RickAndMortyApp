@@ -50,7 +50,3 @@ export const ButtonIcon = styled(Icon)`
   color: #FFFFFF;
   font-size: 20px;
 `;
-
-export const Loader = styled.ActivityIndicator`
-  margin: 15px 0;
-`;

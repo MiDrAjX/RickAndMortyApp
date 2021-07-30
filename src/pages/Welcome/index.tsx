@@ -1,5 +1,4 @@
 import React from 'react';
-import {Image} from 'react-native';
 import {useNavigation} from '@react-navigation/core';
 
 import logoImage from '../../assets/rickyandmortylogo.png';
@@ -9,17 +8,27 @@ import { Container, LogoImg, ButtonContainer, ButtonText, ButtonIcon } from './s
 
 export default function Welcome() {
 
+  const navigation = useNavigation()
+
+  function handleCharacterListAcess(){
+      navigation.navigate("CharacterList")
+  }
+  
+
   return(
   <Container source={wallpaper} resizeMode="cover">
+
     <LogoImg source={logoImage} />
-    <ButtonContainer>
+
+    <ButtonContainer onPress={handleCharacterListAcess}>
 
       <ButtonText>Prosseguir</ButtonText>
 
       <ButtonIcon name="arrow-right" />
 
     </ButtonContainer>
-
+    
   </Container>
+  
   )
 };
