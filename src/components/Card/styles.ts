@@ -3,7 +3,7 @@ import Icon from 'react-native-vector-icons/Feather';
 
 export const CardContainer = styled.TouchableOpacity`
 flex-direction: row;
-width: 340px;
+width: 370px;
 height: 150px;
 margin: 15px 0 0;
 background: #f0f0f5;
@@ -44,9 +44,11 @@ font-family: Poppins;
 line-height: 20px;
 `;
 
-export const CardButtonIcon = styled(Icon)`
+export const CardButtonIcon = styled.Image`
+position: absolute;
+bottom: 15px;
+right: 15px;
 color: #1E2047;
-box-shadow: 10px 5px 5px black;
 font-size: 20px;
 `;
 

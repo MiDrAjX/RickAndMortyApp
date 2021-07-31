@@ -3,6 +3,8 @@ import React, { useCallback, useEffect } from 'react';
 import {Character} from '../../pages/CharacterList';
 import { View } from 'react-native';
 
+import heart from '../../assets/heart.png'
+
 
 import {
   CardContainer,
@@ -24,13 +26,14 @@ export default function Card({item}:CharacterProps){
   const navigation = useNavigation()
 
   const handleCharacterListAcess = useCallback(
-    (name: string) => {
-      navigation.navigate('CharacterOverView', { name });
+    (id: string) => {
+      navigation.navigate('CharacterOverView', { id });
     },
     [navigation],
   );
 
 return (
+  <>
   <CardContainer onPress={()=>handleCharacterListAcess(item.id)}>
   <CardImage source={{ uri: item.image }} resizeMode="cover"/>
     <CardInformation>
@@ -48,11 +51,11 @@ return (
         <CardSubTitle>Origin:</CardSubTitle>
         <ViewRow>
           <CardText>{item.origin.name}</CardText>
-          <CardButtonIcon name="heart" />
         </ViewRow>
       </View>
-
     </CardInformation>
   </CardContainer>
+  <CardButtonIcon source={heart} />
+  </>
 );
 };
