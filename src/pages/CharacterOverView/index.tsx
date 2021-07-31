@@ -1,11 +1,12 @@
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import React, { useCallback, useEffect, useState } from 'react';
 import api from "../../services/api";
-import { Linking, Text, View } from 'react-native';
+import { Linking, Image } from 'react-native';
+
+import heart from '../../assets/heart.png'
 
 import { 
-  Container, 
-  CharacterButtonIcon, 
+  Container,  
   CharacterImage, 
   CharacterTitle, 
   ViewRow, 
@@ -19,6 +20,7 @@ import {
   ReturnButton,
   ReturnButtonIcon,
   CharacterInfo,
+  LikeContainer,
 } from './styles';
 import { Load } from '../../components/Load';
 
@@ -82,7 +84,9 @@ export default function CharacterOverView(){
      <CharacterTitle numberOfLines={1}>
      {character.name}
       </CharacterTitle>
-      <CharacterButtonIcon name="heart"/>
+      <LikeContainer>
+      <Image source={heart}/>
+      </LikeContainer>
      </ViewRow>
      <ViewRow>
      <ViewSpace>

@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/core';
 import React, { useCallback, useEffect } from 'react';
 import {Character} from '../../pages/CharacterList';
-import { View } from 'react-native';
+import { View, Image } from 'react-native';
 
 import heart from '../../assets/heart.png'
 
@@ -13,8 +13,8 @@ import {
   CardTitle,
   CardSubTitle,
   CardText,
-  CardButtonIcon,
   ViewRow,
+  LikeContainer,
 } from './styles';
 
 interface CharacterProps {
@@ -55,7 +55,9 @@ return (
       </View>
     </CardInformation>
   </CardContainer>
-  <CardButtonIcon source={heart} />
+  <LikeContainer>
+  <Image source={heart} />
+  </LikeContainer>
   </>
 );
 };

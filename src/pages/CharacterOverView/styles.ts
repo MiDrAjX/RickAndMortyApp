@@ -39,13 +39,18 @@ line-height: 36px;
 color: #333333;
 `;
 
-export const CharacterButtonIcon = styled(Icon)`
-left: 320px;
-position:absolute;
-padding-top: 3px;
-color: #1E2047;
-font-size: 30px;
+export const CharacterButtonLike = styled.Image`
+
 `;
+export const LikeContainer = styled.TouchableOpacity`
+flex-direction: row;
+left: 160px;
+top:11px;
+width: 15px;
+height: 15px;
+border-radius: 6px;
+`;
+
 export const CharacterSubTitle = styled.Text`
 width: 100%;
 font-family: Poppins;

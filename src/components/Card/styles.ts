@@ -9,6 +9,14 @@ margin: 15px 0 0;
 background: #f0f0f5;
 border-radius: 6px;
 `;
+export const LikeContainer = styled.TouchableOpacity`
+flex-direction: row;
+bottom: 28px;
+left: 340px;
+width: 15px;
+height: 15px;
+border-radius: 6px;
+`;
 
 export const CardImage = styled.Image`
 width: 140px;
@@ -42,14 +50,6 @@ color: #333333;
 font-size: 16px;
 font-family: Poppins;
 line-height: 20px;
-`;
-
-export const CardButtonIcon = styled.Image`
-position: absolute;
-bottom: 15px;
-right: 15px;
-color: #1E2047;
-font-size: 20px;
 `;
 
 export const ViewRow= styled.View`
