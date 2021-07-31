@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/Feather';
 
 export const Container = styled.View`
-width: 340px;
+width: 371px;
 height: 50px;
 flex-direction:row;
 top: -25px;
