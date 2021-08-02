@@ -78,13 +78,13 @@ return (
       </CardTitle>
 
       <View>
-        <CardSubTitle>Species:</CardSubTitle>
-        <CardText>{item.species}</CardText>
+        <CardSubTitle>Espécie:</CardSubTitle>
+        <CardText>{item.species=='Human'?'Humano':item.species}</CardText>
       </View>
       <View>
-        <CardSubTitle>Origin:</CardSubTitle>
+        <CardSubTitle>Origem:</CardSubTitle>
         <ViewRow>
-          <CardText>{item.origin.name}</CardText>
+          <CardText>{item.origin.name=='Earth (Replacement Dimension)'?'Terra Substituta':item.origin.name}</CardText>
         </ViewRow>
       </View>
     </CardInformation>

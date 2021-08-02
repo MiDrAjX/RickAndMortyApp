@@ -1,5 +1,15 @@
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 import Icon from 'react-native-vector-icons/Feather';
+
+interface CharacterStatusProps {
+  status?: 'alive' | 'dead' | 'unknown';
+}
+
+const handleStatusType = {
+  alive: '#4ac82a',
+  dead: '#e91337',
+  unknown: '#ff9000',
+};
 
 export const Container = styled.View`
 flex:1;
@@ -21,20 +31,20 @@ margin-top: -30px;
 margin-bottom: 56px;
 padding: 15px 25px;
 background: #F0F0F5;
+align-items: flex-start;
 `;
 export const CharacterTitle = styled.Text`
-margin-bottom: 30px;
-left: 0px;
-position:absolute;
+align-self: center;
 font-family: 'Poppins-SemiBold';
 font-size: 24px;
 line-height: 36px;
 color: #333333;
+width: 90%;
 `;
 export const LikeContainer = styled.TouchableOpacity`
 flex-direction: row;
-left: 160px;
-top:11px;
+left: 10px;
+top:5px;
 width: 15px;
 height: 15px;
 border-radius: 6px;
@@ -45,34 +55,24 @@ font-family: 'Poppins-Regular';
 font-size: 16px;
 line-height: 24px;
 color: #333333;
+margin-right: 150px;
 `;
 export const CharacterText = styled.Text`
+width:100%;
 font-family: 'Poppins-SemiBold';
 font-size: 16px;
 line-height: 24px;
 color: #333333;
 `;
 export const CharacterLocation = styled.Text`
-left: 55px;
-top:-10px;
 font-family: 'Poppins-SemiBold';
-font-style: normal;
-font-weight: 500;
 font-size: 16px;
 line-height: 24px;
 color: #333333;
 `;
 export const ViewRow= styled.View`
 flex-direction:row;
-justify-content:space-around;
-`;
-export const ViewSpace= styled.View`
-left:-50px;
-top:10px;
-`;
-export const ViewSpace2= styled.View`
-width: 100%;
-left: 90px;
+justify-content:space-between;
 `;
 export const Footer = styled.TouchableOpacity`
 position: absolute;
@@ -111,5 +111,17 @@ margin-left: 3px;
 color: #FFFFFF;
 font-size: 26px;
 `;
+export const CharacterStatus  = styled.Text<CharacterStatusProps>`
+  color: #333333;
+  font-size: 16px;
+  font-family: 'Poppins-SemiBold';
+  line-height: 20px;
+  ${props =>
+    props.status &&
+    css`
+      color: ${handleStatusType[props.status]};
+    `}
+`;
+
 
 

@@ -1,7 +1,7 @@
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import React, { useCallback, useEffect, useState } from 'react';
 import api from "../../services/api";
-import { Linking, Image } from 'react-native';
+import { Linking, Image, View } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 
 import heart from '../../assets/heart.png'
@@ -14,15 +14,13 @@ import {
   ViewRow, 
   CharacterSubTitle, 
   CharacterText,
-  ViewSpace,
-  CharacterLocation,
-  ViewSpace2,
   Footer,
   FooterText,
   ReturnButton,
   ReturnButtonIcon,
   CharacterInfo,
   LikeContainer,
+  CharacterStatus,
 } from './styles';
 import { Load } from '../../components/Load';
 
@@ -97,7 +95,6 @@ export default function CharacterOverView(){
   function handleLike(){
     setIsLike(!isLike)
     LikeSave(String(id), isLike)
-   
   }
 
   const handleGoogle = useCallback(async searchName => {
@@ -111,7 +108,7 @@ export default function CharacterOverView(){
    <Container>
      
      <CharacterImage source={{ uri: character.image }} resizeMode="cover"/>
-     <ReturnButton onPress={handleReturn}>
+      <ReturnButton onPress={handleReturn}>
         <ReturnButtonIcon name="arrow-left" />
       </ReturnButton>
     <CharacterInfo>
@@ -123,30 +120,49 @@ export default function CharacterOverView(){
   {isLike !== true ? <Image source={heart} /> : <Image source={heartfill} />}
       </LikeContainer>
      </ViewRow>
+    
      <ViewRow>
-     <ViewSpace>
-        <CharacterSubTitle>Species:</CharacterSubTitle>
-        <CharacterText>{character.species}</CharacterText>
-      </ViewSpace>
-      <ViewSpace>
-        <CharacterSubTitle>Gender:</CharacterSubTitle>
-        <CharacterText>{character.gender}</CharacterText>
-      </ViewSpace>
+     <View>
+        <CharacterSubTitle>Espécie:</CharacterSubTitle>
+        <CharacterText>{character.species=='Human'?'Humano':character.species}</CharacterText>
+      </View>
+      <View>
+        <CharacterSubTitle>Gênero:</CharacterSubTitle>
+        {character.gender!==('Genderless'&&'unknown')?
+        <CharacterText>{character.gender=='Male'?'Masculino':'Feminino'||character.gender}</CharacterText>
+        :
+        <CharacterText>{character.gender=='unknown'?'Desconhecido':'Sem gênero'||character.gender}</CharacterText>  
+      }
+      </View>
       </ViewRow>
-      <ViewSpace>
-        <CharacterLocation>Location:</CharacterLocation>
-        <CharacterLocation>{character.location.name}</CharacterLocation>
-      </ViewSpace>
+      
+      
       <ViewRow>
-     <ViewSpace2 >
-        <CharacterSubTitle >Origin:</CharacterSubTitle>
-        <CharacterText>{character.origin.name}</CharacterText>
-      </ViewSpace2>
-      <ViewSpace2>
-        <CharacterSubTitle>Status:</CharacterSubTitle>
-        <CharacterText>{character.status}</CharacterText>
-      </ViewSpace2>
+      <View>
+        <CharacterSubTitle>Localização:</CharacterSubTitle>
+        <CharacterText>{character.location.name=='Earth (Replacement Dimension)'?'Terra Substituta':character.location.name}</CharacterText>
+      </View>
       </ViewRow>
+      
+      <ViewRow>
+      <View>
+        <CharacterSubTitle >Origem:</CharacterSubTitle>
+        <CharacterText>{character.origin.name=='Earth (Replacement Dimension)'?'Terra Substituta':character.origin.name}</CharacterText>
+      </View>
+      <View>
+        <CharacterSubTitle>Status:</CharacterSubTitle>
+        {character.status!=='unknown'?
+            <CharacterStatus status={character.status=='Alive'?'alive':'dead'}>
+              {character.status=='Alive'?'Vivo':'Morto'}
+            </CharacterStatus> 
+            :
+            <CharacterStatus status={character.status}>
+              Desconhecido
+            </CharacterStatus> }
+              
+        </View>
+      </ViewRow>
+      
       </CharacterInfo>
       <Footer onPress={()=>handleGoogle(character.name)}>
         <FooterText>Buscar no Google</FooterText>
