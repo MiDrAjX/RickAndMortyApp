@@ -93,7 +93,7 @@ export default function CharacterOverView(){
     }
   
   function handleLike(){
-    setIsLike(!isLike)
+    setIsLike(isLike=>!isLike)
     LikeSave(String(id), isLike)
   }
 
@@ -128,10 +128,10 @@ export default function CharacterOverView(){
       </View>
       <View>
         <CharacterSubTitle>Gênero:</CharacterSubTitle>
-        {character.gender!==('Genderless'&&'unknown')?
-        <CharacterText>{character.gender=='Male'?'Masculino':'Feminino'||character.gender}</CharacterText>
+        {character.gender!=='Genderless'&&character.gender!=='unknown'?
+        <CharacterText>{character.gender=='Male'?'Masculino':'Feminino'}</CharacterText>
         :
-        <CharacterText>{character.gender=='unknown'?'Desconhecido':'Sem gênero'||character.gender}</CharacterText>  
+        <CharacterText>{character.gender=='Genderless'?'Sem gênero':'Desconhecido'}</CharacterText>  
       }
       </View>
       </ViewRow>
