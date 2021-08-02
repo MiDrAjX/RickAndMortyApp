@@ -22,18 +22,16 @@ export const Header = styled.View`
   export const Title = styled.Text`
  
   color: #FFFFFF;
-  font-family: Poppins;
+  font-family: 'Poppins-SemiBold';
   font-style: normal;
-  font-weight: 600;
   font-size: 20px;
   line-height: 32px;
   `
 
   export const Quantidade = styled.Text`
   color: #C1C1C1;
-  font-family: Poppins;
+  font-family: 'Poppins-Light';
   font-style: normal;
-  font-weight: normal;
   font-size: 14px;
   line-height: 32px;
   `;
@@ -52,7 +50,7 @@ export const InputTextLista = styled.TextInput`
   flex: 1;
   color: #222222;
   font-size: 16px;
-  font-family: Poppins;
+  font-family: 'Poppins-Regular';
   left: 20px;
 `;
 

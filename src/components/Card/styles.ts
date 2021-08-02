@@ -34,20 +34,20 @@ padding: 10px;
 export const CardTitle = styled.Text`
 color: #333333;
 font-size: 20px;
-font-family: Poppins;
+font-family: 'Poppins-SemiBold';
 `;
 
 export const CardSubTitle = styled.Text`
 color: #333333;
 font-size: 14px;
-font-family: Poppins;
+font-family: 'Poppins-Regular';
 line-height: 20px;
 `;
 
 export const CardText = styled.Text`
 color: #333333;
 font-size: 16px;
-font-family: Poppins;
+font-family: 'Poppins-SemiBold';
 line-height: 20px;
 `;
 

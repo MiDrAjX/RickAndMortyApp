@@ -33,9 +33,8 @@ export const ButtonContainer = styled(RectButton)`
 export const ButtonText = styled.Text`
 top:16px;
 
-font-family: Poppins;
+font-family: 'Poppins-Regular';
 font-style: normal;
-font-weight: 500;
 font-size: 15px;
 line-height: 22px;
 
