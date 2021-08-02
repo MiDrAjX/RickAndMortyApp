@@ -7,7 +7,7 @@ import wallpaper from '../../assets/wallpaper21.png';
 import { Container, LogoImg, ButtonContainer, ButtonText, ButtonIcon } from './styles';
 
 export default function Welcome() {
-
+  
   const navigation = useNavigation()
 
   function handleCharacterListAcess(){

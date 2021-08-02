@@ -41,12 +41,12 @@ line-height: 22px;
 
 text-align: center;
 
-color: #FFFFFF;
+color: white;
 `;
 
 export const ButtonIcon = styled(Icon)`
   left:216px;
   top:-4px;
-  color: #FFFFFF;
+  color: white;
   font-size: 20px;
 `;

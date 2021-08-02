@@ -1,22 +1,15 @@
 import React, {useState, useEffect} from 'react';
-import {useNavigation} from '@react-navigation/core';
 import {FlatList , ActivityIndicator, View, Text, ImageSourcePropType, Image } from 'react-native';
 import api from "../../services/api";
-import { Load } from '../../components/Load';
-import colors from '../../styles/colors';
-import  Card  from '../../components/Card';
 
-import {
-  CardContainer,
-  CardImage,
-  CardInformation,
-  CardTitle,
-  CardSubTitle,
-  CardText,
-  CardButtonIcon,
-} from '../../components/Card/styles';
+import colors from '../../styles/colors';
+
 import { Container, Header, Title, Quantidade } from './styles';
+
 import { SearchField } from '../../components/SearchField';
+import  Card  from '../../components/Card';
+import { Load } from '../../components/Load';
+
 
 
  export interface Character{
@@ -40,7 +33,6 @@ export default function CharacterList(){
   const [page, setPage]= useState(1);
   const [loadingMore, setLoadingMore] = useState(false);
   const [loadedAll, setLoadedAll] = useState(false)
-
   
 
   function handleFetchMore(){

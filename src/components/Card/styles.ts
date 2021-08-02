@@ -5,7 +5,6 @@ export const CardContainer = styled.TouchableOpacity`
 flex-direction: row;
 width: 370px;
 height: 150px;
-margin: 15px 0 0;
 background: #f0f0f5;
 border-radius: 6px;
 `;

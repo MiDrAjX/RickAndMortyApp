@@ -39,9 +39,6 @@ line-height: 36px;
 color: #333333;
 `;
 
-export const CharacterButtonLike = styled.Image`
-
-`;
 export const LikeContainer = styled.TouchableOpacity`
 flex-direction: row;
 left: 160px;
