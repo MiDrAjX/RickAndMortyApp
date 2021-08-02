@@ -4,9 +4,9 @@ import api from "../../services/api";
 
 import colors from '../../styles/colors';
 
-import { Container, Header, Title, Quantidade } from './styles';
+import { Container, Header, Title, Quantidade, ContainerLista, ButtonIconLista, InputTextLista } from './styles';
 
-import { SearchField } from '../../components/SearchField';
+//import { SearchField } from '../../components/SearchField';
 import  Card  from '../../components/Card';
 import { Load } from '../../components/Load';
 
@@ -28,6 +28,7 @@ export default function CharacterList(){
 
   const [characters, setCharacters]= useState<Character[]>([]);
   const [charactersCount, setCharactersCount]= useState(0);
+  const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
 
   const [page, setPage]= useState(1);
@@ -41,6 +42,16 @@ export default function CharacterList(){
     
     fetchCharacters();
 }
+  async function fetchSearchCharacters(){
+    const {data} = await api.get(`/character/?name=${search}`)
+    if(!data){
+      return setLoading(true);
+  } 
+      setCharacters(data.results);
+
+      setCharactersCount(data.info.count);
+  setLoading(false);
+  }
   async function fetchCharacters(){
     
     const {data} = await api.get(`/character/?page=${page}`)
@@ -63,7 +74,9 @@ export default function CharacterList(){
  useEffect(() => {
   fetchCharacters()
   },[])
- 
+  useEffect(() => {
+    fetchSearchCharacters()
+    },[search])
 
   if(loading){ 
       return <Load/>
@@ -75,10 +88,26 @@ export default function CharacterList(){
       <Quantidade>{charactersCount} Personagens</Quantidade>
     </Header>
     <View>
-      <SearchField/>
+    <ContainerLista>
+    <ButtonIconLista name="search"/>
+      <InputTextLista 
+      value={search}
+      onChangeText={(e) => setSearch(e)}
+      placeholder="Busque por um personagem"
+      />
+    </ContainerLista>
     </View>
 
-    
+    {search!==''? 
+    <FlatList
+    data={characters}
+    keyExtractor={Character => Character.id}
+    renderItem={({item})=>(
+      <Card item={item}/>
+    )}
+    showsVerticalScrollIndicator={false}
+  />
+    :
     <FlatList
       data={characters}
       keyExtractor={Character => Character.id}
@@ -91,7 +120,8 @@ export default function CharacterList(){
           ListFooterComponent={
               loadingMore ? <ActivityIndicator color={colors.blue_dark}/>:<></>
             }
-    />  
+    /> }
+      
        
   </Container>
   )
