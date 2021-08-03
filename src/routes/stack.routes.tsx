@@ -16,21 +16,21 @@ const AppRoutes: React.FC = () => (
         },
     }}
 >
-        <stackRoutes.Screen
-        name="Welcome"
-        component={Welcome}
-        />
+    <stackRoutes.Screen
+    name="Welcome"
+    component={Welcome}
+    />
 
-        <stackRoutes.Screen
-        name="CharacterList"
-        component={CharacterList}
-        />
-        <stackRoutes.Screen
-        name="CharacterOverView"
-        component={CharacterOverView}
-        />
+    <stackRoutes.Screen
+    name="CharacterList"
+    component={CharacterList}
+    />
+    <stackRoutes.Screen
+    name="CharacterOverView"
+    component={CharacterOverView}
+    />
 
-        </stackRoutes.Navigator>
+</stackRoutes.Navigator>
 )
 
 export default AppRoutes;

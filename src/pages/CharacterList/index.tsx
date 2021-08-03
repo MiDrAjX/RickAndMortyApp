@@ -1,104 +1,106 @@
 import React, {useState, useEffect} from 'react';
-import {FlatList , ActivityIndicator, View, Text, ImageSourcePropType, Image } from 'react-native';
-import api from "../../services/api";
+import {FlatList , ActivityIndicator, View, TouchableOpacity } from 'react-native';
+import api from '../../services/api';
 
 import colors from '../../styles/colors';
 
-import { Container, Header, Title, Quantidade, ContainerLista, ButtonIconLista, InputTextLista } from './styles';
+import { 
+  Container, 
+  Header, 
+  Title, 
+  Quantidade, 
+  ContainerLista, 
+  ButtonIconLista, 
+  InputTextLista 
+} from './styles';
 
-//import { SearchField } from '../../components/SearchField';
 import  Card  from '../../components/Card';
 import { Load } from '../../components/Load';
+import { RouteProp, useRoute } from '@react-navigation/core';
 
-
-
- export interface Character{
-  id: string;
-  name: string;
-  image: string;
-  species: string;
-  origin:{
-    name:string,
-    url:string
-  }
-  }
+export interface Character{
+id: string;
+name: string;
+image: string;
+species: string;
+origin:{
+  name:string,
+  url:string,
+};
+};
 
 
 export default function CharacterList(){
 
-  const [characters, setCharacters]= useState<Character[]>([]);
-  const [charactersCount, setCharactersCount]= useState(0);
-  const [search, setSearch] = useState('');
-  const [loading, setLoading] = useState(true);
+const [characters, setCharacters]= useState<Character[]>([]);
+const [charactersCount, setCharactersCount]= useState(0);
+const [search, setSearch] = useState('');
 
-  const [page, setPage]= useState(1);
-  const [loadingMore, setLoadingMore] = useState(false);
-  const [loadedAll, setLoadedAll] = useState(false)
-  
+const [loading, setLoading] = useState(true);
+const [page, setPage]= useState(1);
+const [loadingMore, setLoadingMore] = useState(false);
 
-  function handleFetchMore(){
-    setLoadingMore(true);
-    setPage(oldValue=> oldValue+1);
-    
-    fetchCharacters();
+function handleFetchMore(){
+setLoadingMore(true);
+setPage(oldValue=> oldValue+1);
+fetchCharacters();
 }
-  async function fetchSearchCharacters(){
-    const {data} = await api.get(`/character/?name=${search}`)
-    if(!data){
-      return setLoading(true);
-  } 
-      setCharacters(data.results);
+async function fetchSearchCharacters(){
 
-      setCharactersCount(data.info.count);
-  setLoading(false);
-  }
-  async function fetchCharacters(){
-    
-    const {data} = await api.get(`/character/?page=${page}`)
-      if(!data){
-          return setLoading(true);
-      }
-      if(page>1){
-          setCharacters(oldValue => [...oldValue, ...data.results]);
-      }else{
-          
-          setCharacters(data.results);
+const {data} = await api.get(`/character/?name=${search}`)
+if(!data){
+  return setLoading(true);
+} 
+setCharacters(data.results);
+setCharactersCount(data.info.count);
+setLoading(false);
+}
+async function fetchCharacters(){
+  
+const {data} = await api.get(`/character/?page=${page}`)
+if(!data){
+  return setLoading(true);
+}
+if(page>1){
+  setCharacters(oldValue => [...oldValue, ...data.results]);
+}else{
+  setCharacters(data.results);
+  setCharactersCount(data.info.count);
+}
+setLoading(false);
+setLoadingMore(false);
+}
 
-          setCharactersCount(data.info.count);
-      }
-      setLoading(false);
-      setLoadingMore(false);
-  }
+useEffect(() => {
+fetchCharacters();
+},[]);
 
-
- useEffect(() => {
-  fetchCharacters()
-  },[])
-  useEffect(() => {
-    fetchSearchCharacters()
-    },[search])
-
-  if(loading){ 
-      return <Load/>
-  }
+if(loading){ 
+  return <Load/>
+}
   return(
-  <Container>
-    <Header>
-      <Title>Listagem</Title>
-      <Quantidade>{charactersCount} Personagens</Quantidade>
-    </Header>
-    <View>
+<Container>
+  <Header>
+    <Title>Listagem</Title>
+    <Quantidade>{charactersCount} Personagens</Quantidade>
+  </Header>
+  <View>
     <ContainerLista>
-    <ButtonIconLista name="search"/>
-      <InputTextLista 
-      value={search}
-      onChangeText={(e) => setSearch(e)}
-      placeholder="Busque por um personagem"
+      <TouchableOpacity onPress={fetchSearchCharacters}>
+        <ButtonIconLista name="search"/>
+        </TouchableOpacity>
+      <InputTextLista
+        keyboardAppearance="light"
+        placeholderTextColor="#959595"
+        autoCorrect={false}
+        autoCapitalize="none"
+        placeholder="Busque por um personagem"
+        onSubmitEditing={fetchSearchCharacters}
+        onChangeText={e=>setSearch(e)}
       />
     </ContainerLista>
-    </View>
-
-    {search!==''? 
+  </View>
+  {search!==''? 
     <FlatList
     data={characters}
     keyExtractor={Character => Character.id}
@@ -106,8 +108,8 @@ export default function CharacterList(){
       <Card item={item}/>
     )}
     showsVerticalScrollIndicator={false}
-  />
-    :
+    />
+  :
     <FlatList
       data={characters}
       keyExtractor={Character => Character.id}
@@ -115,14 +117,14 @@ export default function CharacterList(){
         <Card item={item}/>
       )}
       showsVerticalScrollIndicator={false}
-          onEndReachedThreshold={0.1}
-          onEndReached={()=>handleFetchMore()}
-          ListFooterComponent={
-              loadingMore ? <ActivityIndicator color={colors.blue_dark}/>:<></>
-            }
-    /> }
-      
-       
-  </Container>
+      onEndReachedThreshold={0.1}
+      onEndReached={()=>handleFetchMore()}
+      ListFooterComponent=
+      {
+        loadingMore ? <ActivityIndicator color={colors.blue_dark}/>:<></>
+      }
+    />
+  }     
+</Container>
   )
   }

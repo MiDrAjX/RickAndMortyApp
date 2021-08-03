@@ -2,13 +2,13 @@ import styled, { css } from 'styled-components/native';
 import Icon from 'react-native-vector-icons/Feather';
 
 interface CharacterStatusProps {
-  status?: 'alive' | 'dead' | 'unknown';
+status?: 'alive' | 'dead' | 'unknown';
 }
 
 const handleStatusType = {
-  alive: '#4ac82a',
-  dead: '#e91337',
-  unknown: '#ff9000',
+alive: '#4ac82a',
+dead: '#e91337',
+unknown: '#ff9000',
 };
 
 export const Container = styled.View`
@@ -16,7 +16,7 @@ flex:1;
 width: 100%;
 height: 100%;
 background-color: #F0F0F5;
-  ` 
+`; 
 export const CharacterImage = styled.Image`
 margin-bottom: 11px;
 width: 100%;
@@ -112,15 +112,15 @@ color: #FFFFFF;
 font-size: 26px;
 `;
 export const CharacterStatus  = styled.Text<CharacterStatusProps>`
-  color: #333333;
-  font-size: 16px;
-  font-family: 'Poppins-SemiBold';
-  line-height: 20px;
-  ${props =>
-    props.status &&
-    css`
-      color: ${handleStatusType[props.status]};
-    `}
+color: #333333;
+font-size: 16px;
+font-family: 'Poppins-SemiBold';
+line-height: 20px;
+${props =>
+  props.status &&
+  css`
+    color: ${handleStatusType[props.status]};
+  `}
 `;
 
 

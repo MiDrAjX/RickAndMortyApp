@@ -1,15 +1,12 @@
 import React from 'react';
-import { useEffect } from 'react';
 
 import rickyGif from '../../assets/RickyCoffe.gif';
 import { Container, LoadGif } from './styles';
 
 export function Load(){
-
-  
-    return(
-      <Container>
+  return(
+    <Container>
       <LoadGif source={rickyGif}/>
-      </Container>
-    )
+    </Container>
+  )
 }

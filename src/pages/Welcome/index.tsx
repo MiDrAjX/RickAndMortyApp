@@ -7,28 +7,28 @@ import wallpaper from '../../assets/wallpaper21.png';
 import { Container, LogoImg, ButtonContainer, ButtonText, ButtonIcon } from './styles';
 
 export default function Welcome() {
+
+const navigation = useNavigation();
+
+function handleCharacterListAcess(){
+navigation.navigate("CharacterList");
+}
+
+
+return(
+<Container source={wallpaper} resizeMode="cover">
+
+  <LogoImg source={logoImage} />
+
+  <ButtonContainer onPress={handleCharacterListAcess}>
+
+    <ButtonText>Prosseguir</ButtonText>
+
+    <ButtonIcon name="arrow-right" />
+
+  </ButtonContainer>
   
-  const navigation = useNavigation()
+</Container>
 
-  function handleCharacterListAcess(){
-      navigation.navigate("CharacterList")
-  }
-  
-
-  return(
-  <Container source={wallpaper} resizeMode="cover">
-
-    <LogoImg source={logoImage} />
-
-    <ButtonContainer onPress={handleCharacterListAcess}>
-
-      <ButtonText>Prosseguir</ButtonText>
-
-      <ButtonIcon name="arrow-right" />
-
-    </ButtonContainer>
-    
-  </Container>
-  
-  )
+)
 };
