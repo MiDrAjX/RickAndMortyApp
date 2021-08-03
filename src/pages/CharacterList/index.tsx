@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {FlatList , ActivityIndicator, View, TouchableOpacity } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
 import api from '../../services/api';
 
 import colors from '../../styles/colors';
@@ -71,9 +72,16 @@ setLoading(false);
 setLoadingMore(false);
 }
 
-useEffect(() => {
-fetchCharacters();
-},[]);
+//useEffect(() => {
+//fetchCharacters();
+//},[]);
+useFocusEffect(//Conserta o fato de não atualizar o like na lista de characters porem deixa um pouco mais lento
+  React.useCallback(() => {
+    setLoading(true)
+    setCharacters([]);
+    fetchCharacters();
+  },[])
+);
 
 if(loading){ 
   return <Load/>

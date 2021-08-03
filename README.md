@@ -85,9 +85,6 @@ O aplicativo vai estar disponivel na tela do seu dispositivo.
 <p align="center">
 <img src=".github/SearchList.PNG" alt="Print da tela exemplo de like">
 </p>
-<h5 align="center">Desafio encontrado nessa parte, Mesmo havendo a persistência do like no aplicativo </h5>
-<h5 align="center">quando se é realizado o like/deslike dentro da pagina do personagem a atualização na lista </h5>
-<h5 align="center">não é instantânea precisando atualizar a tela de lista de personagens para aparecer o like</h5>
 </div>
 
 Feito com 💜 por Jeison Marques 👋 [Dá uma olhada no meu linkedin](https://www.linkedin.com/in/jeison-marques/)
