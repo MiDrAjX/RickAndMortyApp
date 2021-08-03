@@ -76,11 +76,11 @@ setLoadingMore(false);
 //fetchCharacters();
 //},[]);
 useFocusEffect(//Conserta o fato de não atualizar o like na lista de characters porem deixa um pouco mais lento
-  React.useCallback(() => {
-    setLoading(true)
-    setCharacters([]);
-    fetchCharacters();
-  },[])
+React.useCallback(() => {
+  setLoading(true)
+  setCharacters([]);
+  fetchCharacters();
+},[])
 );
 
 if(loading){ 

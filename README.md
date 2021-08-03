@@ -36,13 +36,13 @@
 
 - Você precisa instalar [Node.js](https://nodejs.org/en/download/) e [Yarn](https://yarnpkg.com/) e ter um ambiente android configurado na sua maquina para rodar este projeto.
 
-**Clone o projeto e acesse a pasta**
+**Clone o projeto e acesse a pasta:**
 
 ```bash
 $ git clone https://github.com/MiDrAjX/RickAndMortyApp.git && cd RickAndMortyApp
 ```
 
-**Siga os passos a seguir**
+**Siga os passos a seguir:**
 
 ```bash
 # Instale as dependencias
@@ -55,14 +55,14 @@ $ yarn start || npm start
 $ npx react-native run-android
 ```
 
-O aplicativo vai estar disponivel na tela do seu dispositivo.
+O aplicativo vai estar disponível na tela do seu dispositivo.
 
 ## 💻 Funcionalidades
 
 ### 💻 Listagem de personagens "Scroll Infinito"
 
 <div>
-<h3 align="center">Ao chegar ao fim da lista carrega novos personagens na lista</h3>
+<h3 align="center">Ao chegar ao fim da lista são carregados novos personagens.</h3>
 <p align="center">
 <img src=".github/CharacterList.PNG" alt="Print da tela lista de personagens">
 </p>
@@ -71,17 +71,17 @@ O aplicativo vai estar disponivel na tela do seu dispositivo.
 ### 💻 Filtro por nome de personagem
 
 <div>
-<h3 align="center">Para Filtrar devesse inserir o nome que deseja e clicar na lupa ou no submit do teclado</h3>
+<h3 align="center">Para Filtrar deve-se inserir o nome que deseja e clicar na lupa ou no submit do teclado;</h3>
 <p align="center">
 <img align="center" src=".github/SearchList.PNG" alt="Print da tela exemplo de filtro">
 </p>
-<h4 align="center">para retornar a lista de todos basta limpar o campo do filtro e clicar na lupa ou no submit do teclado</h4>
+<h4 align="center">Para retornar a lista de todos basta limpar o campo do filtro e clicar na lupa ou no submit do teclado.</h4>
 </div>
 
 ### 💻 Like consistente nos personagens
 
 <div>
-<h3 align="center">Clicar no simbolo de coração para realizar o like/deslike do personagem. estado fica salvo no asyncStorage</h3>
+<h3 align="center">Clicar no símbolo de coração para realizar o like/deslike do personagem O estado fica salvo no asyncStorage.</h3>
 <p align="center">
 <img src=".github/SearchList.PNG" alt="Print da tela exemplo de like">
 </p>
