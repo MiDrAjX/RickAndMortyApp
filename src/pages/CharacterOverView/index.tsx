@@ -59,7 +59,7 @@ const navigation = useNavigation();
 
 const handleReturn = useCallback(
 (liked: boolean) => {
-  navigation.navigate('CharacterList', {liked});
+  navigation.goBack();
 },
 [navigation],
 );
