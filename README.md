@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="./src/assets/rickyandmortylogo.svg" alt="RickMortyApp logo">
   <img src="https://pede.ai/upload/logo-horizontal-pedeai.png" alt="Pedeai logo">
+  <img src="./src/assets/rickyandmortylogo.svg" alt="RickMortyApp logo">
 </div>
 
 ## RickMortyApp
@@ -15,11 +15,6 @@
 ![RickMortyApp OverView](.github/OverView.PNG)
 
 ## Tecnologias
-
-<div align="center">
-  <br />
-  <img src=".github/tech-logos.png" alt="Technologies used">
-</div>
 
 - [ReactJS](https://reactjs.org/)
 - [React-Native](https://reactnative.dev/)
