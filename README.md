@@ -9,11 +9,20 @@
   RickMortyApp é um App criado para busca de personagens da série televisiva Rick and Morty.
 </h4>
 
-![RickMortyApp Welcome](.github/Welcome.PNG)
-![RickMortyApp CharacterList](.github/CharacterList.PNG)
-
-![RickMortyApp SearchList](.github/SearchList.PNG)
-![RickMortyApp OverView](.github/OverView.PNG)
+<div>
+<p align="center">
+<img src=".github/Welcome.PNG" alt="Print da tela Welcome">
+</p>
+<p align="center">
+<img src=".github/CharacterList.PNG" alt="Print da tela de lista de personagens">
+</p>
+<p align="center">
+<img src=".github/SearchList.PNG" alt="Print da tela do filtro de busca">
+</p>
+<p align="center">
+<img src=".github/OverView.PNG" alt="Print da tela do personagem">
+</p>
+</div>
 
 ## Tecnologias
 
@@ -78,7 +87,7 @@ O aplicativo vai estar disponivel na tela do seu dispositivo.
 <div>
 <h3 align="center">Clicar no simbolo de coração para realizar o like/deslike do personagem. estado fica salvo no asyncStorage</h3>
 <p align="center">
-<img src=".github/SearchList.PNG" alt="Print da tela exemplo de filtro">
+<img src=".github/SearchList.PNG" alt="Print da tela exemplo de like">
 </p>
 <h5 align="center">Desafio encontrado nessa parte, Mesmo havendo a persistência do like no aplicativo </h5>
 <h5 align="center">quando se é realizado o like/deslike dentro da pagina do personagem a atualização na lista </h5>
