@@ -9,10 +9,14 @@
   RickMortyApp é um App criado para busca de personagens da série televisiva Rick and Morty.
 </h4>
 
+<div justify-content='space-between'>
 ![RickMortyApp Welcome](.github/Welcome.PNG)
 ![RickMortyApp CharacterList](.github/CharacterList.PNG)
+</div>
+<div justify-content='space-between'>
 ![RickMortyApp SearchList](.github/SearchList.PNG)
 ![RickMortyApp OverView](.github/OverView.PNG)
+</div>
 
 ## Tecnologias
 
