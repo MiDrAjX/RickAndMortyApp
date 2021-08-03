@@ -58,14 +58,18 @@ O aplicativo vai estar disponivel na tela do seu dispositivo.
 
 <div>
 <h3 align="center">Ao chegar ao fim da lista carrega novos personagens na lista</h3>
- <img src=".github/CharacterList.PNG" alt="Print da tela lista de personagens">
+<p align="center">
+<img src=".github/CharacterList.PNG" alt="Print da tela lista de personagens">
+</p>
 </div>
 
 ### 💻 Filtro por nome de personagem
 
 <div>
 <h3 align="center">Para Filtrar devesse inserir o nome que deseja e clicar na lupa ou no submit do teclado</h3>
- <img align="center" src=".github/SearchList.PNG" alt="Print da tela exemplo de filtro">
+<p align="center">
+<img align="center" src=".github/SearchList.PNG" alt="Print da tela exemplo de filtro">
+</p>
 <h4 align="center">para retornar a lista de todos basta limpar o campo do filtro e clicar na lupa ou no submit do teclado</h4>
 </div>
 
@@ -73,7 +77,9 @@ O aplicativo vai estar disponivel na tela do seu dispositivo.
 
 <div>
 <h3 align="center">Clicar no simbolo de coração para realizar o like/deslike do personagem. estado fica salvo no asyncStorage</h3>
- <img align="center" src=".github/SearchList.PNG" alt="Print da tela exemplo de filtro">
+<p align="center">
+<img src=".github/SearchList.PNG" alt="Print da tela exemplo de filtro">
+</p>
 <h5 align="center">Desafio encontrado nessa parte, Mesmo havendo a persistência do like no aplicativo </h5>
 <h5 align="center">quando se é realizado o like/deslike dentro da pagina do personagem a atualização na lista </h5>
 <h5 align="center">não é instantânea precisando atualizar a tela de lista de personagens para aparecer o like</h5>
