@@ -12,14 +12,10 @@
 <div>
 <p align="center">
 <img src=".github/Welcome.PNG" alt="Print da tela Welcome">
-</p>
-<p align="center">
 <img src=".github/CharacterList.PNG" alt="Print da tela de lista de personagens">
 </p>
 <p align="center">
 <img src=".github/SearchList.PNG" alt="Print da tela do filtro de busca">
-</p>
-<p align="center">
 <img src=".github/OverView.PNG" alt="Print da tela do personagem">
 </p>
 </div>
