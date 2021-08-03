@@ -54,29 +54,29 @@ O aplicativo vai estar disponivel na tela do seu dispositivo.
 
 ## 💻 Funcionalidades
 
-### Listagem de personagens "Scroll Infinito"
+### 💻 Listagem de personagens "Scroll Infinito"
 
 <div>
-<h3>Ao chegar ao fim da lista carrega novos personagens na lista</h3>
+<h3 align="center">Ao chegar ao fim da lista carrega novos personagens na lista</h3>
  <img src=".github/CharacterList.PNG" alt="Print da tela lista de personagens">
 </div>
 
-### Filtro por nome de personagem
+### 💻 Filtro por nome de personagem
 
 <div>
-<h3>Para Filtrar devesse inserir o nome que deseja e clicar na lupa ou no submit do teclado</h3>
- <img src=".github/SearchList.PNG" alt="Print da tela exemplo de filtro">
-<h4>para retornar a lista de todos basta limpar o campo do filtro e clicar na lupa ou no submit do teclado</h4>
+<h3 align="center">Para Filtrar devesse inserir o nome que deseja e clicar na lupa ou no submit do teclado</h3>
+ <img align="center" src=".github/SearchList.PNG" alt="Print da tela exemplo de filtro">
+<h4 align="center">para retornar a lista de todos basta limpar o campo do filtro e clicar na lupa ou no submit do teclado</h4>
 </div>
 
-### Like consistente nos personagens
+### 💻 Like consistente nos personagens
 
 <div>
-<h3>Clicar no simbolo de coração para realizar o like/deslike do personagem. estado fica salvo no asyncStorage</h3>
- <img src=".github/SearchList.PNG" alt="Print da tela exemplo de filtro">
-<h5>Desafio encontrado nessa parte, Mesmo havendo a persistência do like no aplicativo </h5>
-<h5>quando se é realizado o like/deslike dentro da pagina do personagem a atualização na lista </h5>
-<h5>não é instantânea precisando atualizar a tela de lista de personagens para aparecer o like</h5>
+<h3 align="center">Clicar no simbolo de coração para realizar o like/deslike do personagem. estado fica salvo no asyncStorage</h3>
+ <img align="center" src=".github/SearchList.PNG" alt="Print da tela exemplo de filtro">
+<h5 align="center">Desafio encontrado nessa parte, Mesmo havendo a persistência do like no aplicativo </h5>
+<h5 align="center">quando se é realizado o like/deslike dentro da pagina do personagem a atualização na lista </h5>
+<h5 align="center">não é instantânea precisando atualizar a tela de lista de personagens para aparecer o like</h5>
 </div>
 
 Feito com 💜 por Jeison Marques 👋 [Dá uma olhada no meu linkedin](https://www.linkedin.com/in/jeison-marques/)
