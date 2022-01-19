@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="https://pede.ai/upload/logo-horizontal-pedeai.png" alt="Pedeai logo">
   <img src="./src/assets/rickyandmortylogo.svg" alt="RickMortyApp logo">
 </div>
 
